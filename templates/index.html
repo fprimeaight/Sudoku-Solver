@@ -1,1 +1,45 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+        <title>Aight's Sudoku Solver</title>
+    </head>
+    <body>
+        <h1>Sudoku Solver</h1>
+        <p>Enter the starting position below by entering numbers into the appropriate squares.</p>
 
+        <form method="post">
+                {% if input %}
+                    <table cellspacing="0">
+                        {% for i in range(9) %}
+                            <tr>
+                                {% for j in range(9) %}
+                                <td><input name = {{i}},{{j}} type = 'text' id='number' maxlength="1" inputmode="numeric" autocomplete="off" value = {{solution[i][j]}}></td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    {% if solution_boolean == false %}
+                        <p><b>No solution found!</b></p>
+                    {% endif %}
+                
+                {% else %}
+                    <table cellspacing="0">
+                        {% for i in range(9) %}
+                        <tr>
+                            {% for j in range(9) %}
+                            <td><input name = {{i}},{{j}} type = 'text' id='number' maxlength="1" inputmode="numeric" autocomplete="off"></td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+                <p><input value="Solve" id="solve_text" type="submit"></p>
+        </form>
+
+        <form>
+            <p><input value="Reset" id="reset_text" type="submit"></p>
+        </form>
+
+    </body>
+</html>
