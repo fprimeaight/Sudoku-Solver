@@ -1,1 +1,20 @@
+body {font-family: Arial;
+      text-align: center}
 
+#number {height:30px;
+         width:30px;
+         border: 2px solid}
+
+table {border: 2px solid;
+       margin-left: auto;
+       margin-right: auto;}
+
+input {text-align: center;
+       outline: none;
+       font-family: Verdana;}
+
+#solve_text,#reset_text {font-family: Arial}
+
+.input_box {display: inline}
+
+input[type=text]:focus {background-color: lightblue}
